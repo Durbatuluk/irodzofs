@@ -1,0 +1,18 @@
+{
+    "irods_host": "172.17.8.101",
+    "irods_port": 1247,
+    "irods_default_resource": "demoResc",
+    "irods_home": "/tempZone/home/rods",
+    "irods_cwd": "/tempZone/home/rods",
+    "irods_user_name": "rods",
+    "irods_zone_name": "tempZone",
+    "irods_client_server_negotiation": "request_server_negotiation",
+    "irods_client_server_policy": "CS_NEG_REFUSE",
+    "irods_encryption_key_size": 32,
+    "irods_encryption_salt_size": 8,
+    "irods_encryption_num_hash_rounds": 16,
+    "irods_encryption_algorithm": "AES-256-CBC",
+    "irods_default_hash_scheme": "SHA256",
+    "irods_match_hash_policy": "compatible"
+}
+
