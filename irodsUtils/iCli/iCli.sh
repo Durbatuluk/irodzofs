@@ -18,6 +18,6 @@ mkdir iDrop
 cd iDrop
 wget https://s3.amazonaws.com/web-files00/iDrop_unix_2_0_1-RC1-008.sh .
 apt-get install openjdk-7-jdk
-./iDrop_unix_2_0_1-RC1-008.sh
+mv iDrop_unix_2_0_1-RC1-008.sh iDrop.sh
 
 apt-get install firefox
