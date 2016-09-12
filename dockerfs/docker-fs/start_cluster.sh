@@ -184,7 +184,7 @@ docker exec rozofs-exportd \
 
 # If a new volume is detected, export it !
 if [ -z ${DOCKER_ROZOFS_VID} ]; then
-    numberExports=$(rozo export list -E $(getIPbyContainerName "rozofs-exportd") | grep "EXPORT " | wc -l)
+    numberExports=$(rozo export get -E $(getIPbyContainerName "rozofs-exportd") | grep "EXPORT " | wc -l)
     docker exec rozofs-exportd \
         rozo export create $(( ${numberExports} + 1 )) \
             --exportd localhost

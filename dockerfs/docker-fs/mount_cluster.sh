@@ -23,5 +23,7 @@ echo
 echo "Trying to mount the remote RozoFS volume..."
 echo
 
+sleep 10
+
 rozofsmount -o instance=1 -H "${DOCKER_ROZOFS_EXPORTD_IP}" -E "${path_exportd}" "$1"
 

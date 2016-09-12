@@ -6,3 +6,5 @@ apt-get install -y `dpkg -I /tmp/irods-ires.deb | sed -n 's/^ Depends: //p' | se
 dpkg -i /tmp/irods-ires.deb
 
 echo "172.17.8.101 irodzofs-01 irodzofs-01" >> /etc/hosts
+
+mv core.re /etc/irods/core.re

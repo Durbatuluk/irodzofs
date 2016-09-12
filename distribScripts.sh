@@ -10,4 +10,3 @@ vagrant scp dockerfs irodzofs-02:/home/vagrant
 
 # Copier script iCli sur machine 3
 vagrant scp irodsUtils/iCli irodzofs-03:/home/vagrant
-vagrant scp dockerfs irodzofs-03:/home/vagrant

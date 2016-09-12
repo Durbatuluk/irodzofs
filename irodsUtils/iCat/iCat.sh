@@ -20,3 +20,8 @@ mv bootstrap.sh /opt/irods/bootstrap.sh
 chmod a+x /opt/irods/*.sh
 
 echo "172.17.8.102 irodzofs-02 irodzofs-02" >> /etc/hosts
+
+mv core.re /etc/irods/core.re
+mv myRules/rmtrash.sh /var/lib/irods/iRODS/server/bin/cmd
+mv myRules /var/lib/irods/
+

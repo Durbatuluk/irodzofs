@@ -1,5 +1,3 @@
-
-
 require 'fileutils'
 require 'ipaddr'
 
@@ -29,6 +27,8 @@ $vm_ip = $vm_starting_ip
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.box = "ubuntu/trusty64"
     config.ssh.insert_key = true
+    config.ssh.forward_agent = true
+    config.ssh.forward_x11 = true
 
     if Vagrant.has_plugin?("vagrant-cachier")
         config.cache.scope = :box
@@ -65,17 +65,22 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         apt-get -y update && apt-get install -y \
         wget \
         lsb-release
+        
         # Avoid warning during packet installations
         ENV DEBIAN_FRONTEND noninteractive
         echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d
+        
         # Set the Docker repository to access Docker packages
         apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
         echo "deb https://apt.dockerproject.org/repo ubuntu-$(lsb_release -sc) main" | tee /etc/apt/sources.list.d/docker.list
+        
         # Set the RozoFS repository to access RozoFS packages
         wget -O - http://dl.rozofs.org/deb/devel@rozofs.com.gpg.key | apt-key add -
         echo "deb http://dl.rozofs.org/deb/master $(lsb_release -sc)  main" | tee /etc/apt/sources.list.d/rozofs.list
+        
         # Install rozofsmount required to mount the remote volume locally and others required packages
         apt-get -y update && apt-get install -y \
-        rozofs-manager* rozofs-rozofsmount rsyslog git make vim docker docker-engine postgresql libcurl4-gnutls-dev
+        rozofs-manager* rozofs-rozofsmount rsyslog git make vim docker docker-engine postgresql libcurl4-gnutls-dev 
+     
     SHELL
 end

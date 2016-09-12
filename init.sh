@@ -2,7 +2,7 @@
 
 #install packages required
 apt-get install virtualbox \
-    vagrant \
+                vagrant \
 
 #install scp for vagrant
 vagrant plugin install vagrant-scp
