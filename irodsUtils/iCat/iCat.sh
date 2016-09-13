@@ -25,3 +25,7 @@ mv core.re /etc/irods/core.re
 mv myRules/rmtrash.sh /var/lib/irods/iRODS/server/bin/cmd
 mv myRules /var/lib/irods/
 
+apt-get install tomcat6 openjdk-6-jdk
+mkdir /etc/idrop-web
+wget -P /etc/idrop-web http://people.renci.org/~danb/FOR_DEMOS/iDrop-Web-2/idrop-web-config2.groovy
+wget -P /var/lib/tomcat6/webapps http://people.renci.org/~danb/FOR_DEMOS/iDrop-Web-2/idrop-web2.war
