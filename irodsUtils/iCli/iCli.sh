@@ -13,6 +13,8 @@ mkdir iWork
 chmod 777 iWork
 cd iWork
 
+mv myRules ~/
+
 cd
 mkdir iDrop
 cd iDrop

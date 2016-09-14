@@ -7,4 +7,5 @@ make images
 mkdir /mnt/rozofs
 chmod 777 /mnt/rozofs
 ./mount_cluster.sh /mnt/rozofs
+chmod 777 /mnt/rozofs
 #docker exec -it rozofs-client01 bash
