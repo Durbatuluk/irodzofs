@@ -8,11 +8,6 @@ cd
 mkdir .irods
 mv ~/iCli/irods_environment.json ~/.irods/irods_environment.json
 
-cd
-mkdir iWork
-chmod 777 iWork
-cd iWork
-
 mv myRules ~/
 
 cd
@@ -22,3 +17,8 @@ wget https://s3.amazonaws.com/web-files00/iDrop_unix_2_0_1-RC1-008.sh .
 apt-get install openjdk-7-jdk firefox
 mv iDrop_unix_2_0_1-RC1-008.sh iDrop.sh
 chmod a+x iDrop.sh
+
+cd
+mkdir iWork
+chmod 777 iWork
+cd iWork
